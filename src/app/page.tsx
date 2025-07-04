@@ -1,11 +1,9 @@
 import Footer from "@/components/Footer";
 import { Metadata } from "next";
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: "ScopeDB Documentation",
-    description: "Get an overview of ScopeDB features, integrations, and how to use them.",
-  }
+export const metadata: Metadata = {
+  title: "ScopeDB Documentation",
+  description: "Get an overview of ScopeDB features, integrations, and how to use them",
 }
 
 function FeaturedItems() {

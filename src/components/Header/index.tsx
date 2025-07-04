@@ -1,28 +1,13 @@
-"use client";
-
 import Search from "@/components/Search";
-import DesktopCategories from "./DesktopCategories";
+import Categories from "./Categories";
 import Link from "next/link";
+import MobileNav from "./MobileNav";
 
-export interface Category {
-  label: string;
-  link: string;
+export enum Category {
+  Guides = "guides",
+  Developer = "developer",
+  Reference = "reference",
 }
-
-const categories: Category[] = [
-  {
-    label: "Guides",
-    link: "/guides/",
-  },
-  {
-    label: "Developer",
-    link: "/developer/",
-  },
-  {
-    label: "Reference",
-    link: "/reference/",
-  },
-];
 
 export default function Header() {
   return <>
@@ -51,7 +36,10 @@ export default function Header() {
 
         <div className="px-[12px] md:px-[24px] border-b border-[rgba(0,0,0,0.05)]">
           <div className="hidden lg:block">
-            <DesktopCategories categories={categories} />
+            <Categories />
+          </div>
+          <div className="lg:hidden">
+            <MobileNav />
           </div>
         </div>
       </div>

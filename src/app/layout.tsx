@@ -1,6 +1,7 @@
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { Inter, Roboto_Mono } from "next/font/google";
-import "./globals.css";
 import Header from "@/components/Header";
+import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,13 +29,14 @@ export default function RootLayout({
       </head>
 
       <body>
-        <header>
-          <Header />
-        </header>
-
-        <main className="pt-[100px] md:pt-[140px]">
-          {children}
-        </main>
+        <AntdRegistry>
+          <header>
+            <Header />
+          </header>
+          <main className="pt-[108px] md:pt-[140px]">
+            {children}
+          </main>
+        </AntdRegistry>
       </body>
     </html>
   );
